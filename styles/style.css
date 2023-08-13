@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-family: 'Space Mono', monospace;
+    background-color: hsl(185, 41%, 84%)
+}
+
+
+/* General */
+.d-inline{
+    display: inline;
+}
+.h-100{
+    height: 100% !important;
+}
+.hidden{
+    display: none;
+}
+
+/* Color */
+.text-white-primary{
+    color: #fff;
+}
+.text-white-secondary{
+    color: hsla(185, 41%, 84%, 0.404)
+}
+.primaryColor{
+    color: hsl(172, 67%, 45%)
+}
+
+/* Typhograpy */
+
+.header-1{
+    font-size: 4rem;
+    font-weight: 700;
+    font-style: normal;
+}
+.inputLabel{
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-style: normal;
+    color: hsl(186, 14%, 43%);
+}
+.subHeader{
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-style: normal;
+}
+.caption{
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* LOGO */
+.mainLogo{
+    text-align: center;
+    padding: 24px 16px;
+}
+.container{
+    width: 100%;
+}
+.contentContainer{
+    background-color: white;
+    padding: 24px 16px;
+    border-top-right-radius: 24px;
+    border-top-left-radius: 24px;
+}
+
+/* Form */
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin-bottom: 3.2rem;
+}
+.fieldContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: relative;
+}
+.inputIcons{
+    width: 100%;
+    position: relative;
+}
+.icon{
+    position: absolute;
+    top: 55%;
+    left: 1.6rem;
+    transform: translateY(-50%);
+}
+.inputField{
+    width: 100%;
+    height: 44px;
+    text-align: right;
+    padding: 0 1.6rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 700;
+    color: hsl(186, 14%, 43%);
+    border: none;
+    border-radius: 4px;
+    background-color: hsl(189, 41%, 97%);
+}
+
+.inputField::placeholder{
+    color: hsla(186, 14%, 43%, 0.452)
+}
+.inputField:focus-visible{
+    outline: none;
+    border: 2px solid hsl(172, 67%, 45%);
+}
+.errorMessage{
+    position: absolute;
+    right: 0;
+    top: 6px;
+    font-size: 1.1rem;
+    color: rgb(224, 34, 34);
+    font-weight: 700;
+}
+.inputError{
+    border:2px solid rgb(224, 34, 34) !important;
+}
+
+.listTip{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.2rem;
+}
+.chipButton{
+    text-align: center;
+    
+}
+.labelChip{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: hsl(183, 100%, 15%);
+    color: #fff;
+    width: 100%;
+    border-radius: 0.4rem;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.15s;
+}
+.labelChip:hover{
+    background-color:hsl(186, 14%, 43%);
+}
+.chipButton input{
+    display: block;
+    position: absolute;
+}
+.chipButton input[type="radio"]{
+    opacity: 0;
+    z-index: 100;
+}
+.chipButton input[type="radio"]:checked + .labelChip{
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+  }
+
+
+
+/* Result */
+.resultConainer{
+    padding: 32px 20px;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+   
+   
+}
+.wrapperContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+.result{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.subResultContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.primaryButton{
+    font-family: 'Space Mono', monospace;
+    height: 44px;
+    width: 100%;
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    border: none;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+.primaryButton:hover{
+    background-color: hsl(185, 41%, 84%)
+
+}
+.primaryButton:disabled{
+    background-color:  hsl(186, 14%, 43%);
+    color: hsl(183, 100%, 15%);
+}
+
+
+/* Footer */
+.attribution{
+    text-align: center;
+    margin-top: 40px;
+    padding: 0 20px;
+    color:hsl(183, 100%, 15%);
+}
+.attribution a{
+    text-decoration: none;
+    color: hsl(172, 67%, 45%);
+}
+@media only screen and (min-width:660px){
+    .container{
+        padding: 0 20px;
+    }
+    .contentContainer{
+        max-width: 1024px;
+        margin: 0 auto;
+        display: flex;
+        gap: 3.2rem;
+        border-radius: 24px;
+        
+    }
+    .formContainer{
+        width: 50%;
+        gap: 3.2rem;
+    }
+    .resultConainer{
+        padding: 32px 32px;
+        width: 50%;
+        justify-content: space-between;
+    }
+    .listTip{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
