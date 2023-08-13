@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/styles/style.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main>
+      <section class="mainLogo">
+        <img src="images/logo.svg" alt="" />
+      </section>
+
+      <section class="container">
+        <div class="contentContainer">
+          <section class="formContainer">
+            <div class="fieldContainer">
+              <label class="inputLabel" for="bill">Bill</label>
+              <div class="inputIcons">
+                <i class="icon"><img src="images/icon-dollar.svg" alt="" /></i>
+                <input
+                  class="inputField"
+                  id="billValue"
+                  type="number"
+                  min="0"
+                  placeholder="0"
+                  oninput="getInput()"
+                  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                />
+              </div>
+            </div>
+            <div class="fieldContainer">
+              <label class="inputLabel" for="bill">Select Tip</label>
+              <div class="listTip">
+                <div class="chipButton">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="tip5"
+                    value="5"
+                    onchange="selectTipInput()"
+                  />
+                  <label class="labelChip" for="tip5">5%</label>
+                </div>
+                <div class="chipButton">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="tip10"
+                    value="10"
+                    onchange="selectTipInput()"
+                  />
+                  <label class="labelChip" for="tip10">10%</label>
+                </div>
+                <div class="chipButton">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="tip15"
+                    value="15"
+                    onchange="selectTipInput()"
+                  />
+                  <label class="labelChip" for="tip15">15%</label>
+                </div>
+                <div class="chipButton">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="tip25"
+                    value="25"
+                    onchange="selectTipInput()"
+                  />
+                  <label class="labelChip" for="tip25">25%</label>
+                </div>
+                <div class="chipButton">
+                  <input
+                    type="radio"
+                    name="tip"
+                    id="tip50"
+                    value="50"
+                    onchange="selectTipInput()"
+                  />
+                  <label class="labelChip" for="tip50">50%</label>
+                </div>
+
+                <input
+                  class="inputField h-100"
+                  type="number"
+                  min="0"
+                  name="tip"
+                  id="customTip"
+                  placeholder="Custom Tip"
+                  oninput="customTipInput()"
+                  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                />
+              </div>
+            </div>
+            <div class="fieldContainer">
+              <label class="inputLabel" for="bill">Number of People</label>
+              <label class="errorMessage hidden" id="errorNumberPeople" for=""
+                >Can't be Zero</label
+              >
+              <div class="inputIcons">
+                <i class="icon"><img src="images/icon-person.svg" alt="" /></i>
+                <input
+                  class="inputField"
+                  id="numberOfPeople"
+                  type="number"
+                  placeholder="0"
+                  value="1"
+                  oninput="getInput()"
+                  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                />
+              </div>
+            </div>
+          </section>
+          <section class="resultConainer">
+            <div class="wrapperContainer">
+              <div class="result">
+                <div class="subResultContainer">
+                  <h3 class="subHeader text-white-primary">Tip Amount</h3>
+                  <p class="caption text-white-secondary">/ person</p>
+                </div>
+                <h1 class="header-1 primaryColor">
+                  $<span class="d-inline" id="tipAmmount">0.00</span>
+                </h1>
+              </div>
+              <div class="result">
+                <div class="subResultContainer">
+                  <p class="subHeader text-white-primary">Total</p>
+                  <p class="caption text-white-secondary">/ person</p>
+                </div>
+                <h1 class="header-1 primaryColor">
+                  $<span class="d-inline" id="billAmmount">0.00</span>
+                </h1>
+              </div>
+            </div>
+
+            <button
+              class="primaryButton"
+              id="buttonReset"
+              type="reset"
+              onclick="resetCalculator()"
+            >
+              Reset
+            </button>
+          </section>
+        </div>
+      </section>
+
+      <footer class="attribution">
+        <p class="caption">
+          Challenge by
+          <a
+            class="link"
+            href="https://www.frontendmentor.io?ref=challenge"
+            target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">Farel Darari Deksano</a>.
+        </p>
+      </footer>
+    </main>
+    <script src="scrpit.js"></script>
+  </body>
+</html>
